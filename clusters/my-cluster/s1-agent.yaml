@@ -42,11 +42,13 @@ spec:
         validating:
           enabled: true
           inventory_only: false
+      
       # Detector config in string format
-      overrideConf: |
-        [detectors]
-        execute_from_memfd.lua.enabled=true
-        execute_from_memfd.lua.verdict=silent
+      overrideConf:
+        detectors:
+          execute_from_memfd_lua:
+            enabled: true
+            verdict: silent
       
       agent:
         resources:
