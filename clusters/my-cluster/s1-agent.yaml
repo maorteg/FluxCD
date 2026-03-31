@@ -63,4 +63,4 @@ spec:
     secrets:
       imagePullSecret: sentinelone-pull-secret
       site_key:
-        name: "eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjNmYWY2MTBiNjM0OTk0OWE4ZmE0M2JmNzU1ZDU2YmYyNzM5M2EyZTZiM2RhNzNkNDRmNTkzYzgzMGJjODc5ODgifQ=="
+        name: eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjNmYWY2MTBiNjM0OTk0OWE4ZmE0M2JmNzU1ZDU2YmYyNzM5M2EyZTZiM2RhNzNkNDRmNTkzYzgzMGJjODc5ODgifQ==
