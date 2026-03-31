@@ -4,12 +4,12 @@ metadata:
   name: s1-agent
   namespace: sentinelone
 spec:
-  interval: 15m
+  interval: 1h
   releaseName: sentinelone
   chart:
     spec:
       chart: s1-agent
-      version: "25.4.2" # Or specify a fixed version
+      version: 25.4.2
       sourceRef:
         kind: HelmRepository
         name: sentinelone
@@ -51,15 +51,15 @@ spec:
       agent:
         resources:
           limits:
-            memory: 1024Mi
+            memory: 1945Mi
         requests:
-          memory: 512Mi
+          memory: 800Mi
       helper:
         resources:
           limits:
-            memory: 1024Mi
+            memory: 1945Mi
         requests:
-          memory: 1024Mi    
+          memory: 1945Mi
     secrets:
       imagePullSecret: sentinelone-pull-secret
       site_key:
