@@ -26,16 +26,16 @@ spec:
       cluster:
         name: "MinikubeLab"
       repositories:
-        agent: https://containers.sentinelone.net/cws-agent/s1agent
-        helper: https://containers.sentinelone.net/cws-agent/s1helper
+        agent: "containers.sentinelone.net/cws-agent/s1agent"
+        helper: "containers.sentinelone.net/cws-agent/s1helper"
       tag:
         agent: 25.4.2-ga
         helper: 25.4.2-ga
       env:
         agent:
-          log_level: error
+          log_level: info
         helper:
-          log_level: error
+          log_level: info
       inventory_enabled: true
       communicator_enabled: true
       admission_controllers:
