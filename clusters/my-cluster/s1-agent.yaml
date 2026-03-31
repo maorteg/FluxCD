@@ -29,39 +29,41 @@ spec:
         agent: "containers.sentinelone.net/cws-agent/s1agent"
         helper: "containers.sentinelone.net/cws-agent/s1helper"
       tag:
-        agent: 25.4.2-ga
-        helper: 25.4.2-ga
+        agent: "25.4.2-ga"
+        helper: "25.4.2-ga"
       env:
         agent:
           log_level: debug
         helper:
           log_level: debug
-      inventory_enabled: true
-      communicator_enabled: true
+          inventory_enabled: true
+          communicator_enabled: true
       admission_controllers:
         validating:
           enabled: true
           inventory_only: false
-      
-      # Detector config in string format
+
+      # Detector config as YAML; chart will convert this to JSON
       overrideConf:
         detectors:
           execute_from_memfd_lua:
             enabled: true
             verdict: silent
-      
+
+      # Helm memory and CPU overrides
       agent:
         resources:
           limits:
             memory: 1945Mi
-        requests:
-          memory: 800Mi
+          requests:
+            memory: 800Mi
       helper:
         resources:
           limits:
             memory: 1945Mi
-        requests:
-          memory: 1945Mi
+          requests:
+            memory: 100Mi
+
     secrets:
       imagePullSecret: sentinelone-pull-secret
       site_key:
