@@ -1,0 +1,66 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: s1-agent
+  namespace: sentinelone
+spec:
+  interval: 15m
+  releaseName: sentinelone
+  chart:
+    spec:
+      chart: s1-agent
+      version: "25.4.2" # Or specify a fixed version
+      sourceRef:
+        kind: HelmRepository
+        name: sentinelone
+        namespace: flux-system
+
+  upgrade:
+    cleanupOnFail: true
+
+  driftDetection:
+    mode: enabled
+
+  values:
+    configuration:
+      cluster:
+        name: "MinikubeLab"
+      repositories:
+        agent: https://containers.sentinelone.net/cws-agent/s1agent
+        helper: https://containers.sentinelone.net/cws-agent/s1helper
+      tag:
+        agent: 25.4.2-ga
+        helper: 25.4.2-ga
+      env:
+        agent:
+          log_level: error
+        helper:
+          log_level: error
+      inventory_enabled: true
+      communicator_enabled: true
+      admission_controllers:
+        validating:
+          enabled: true
+          inventory_only: false
+      # Detector config in string format
+      overrideConf: |
+        [detectors]
+        execute_from_memfd.lua.enabled=true
+        execute_from_memfd.lua.verdict=silent
+      
+      agent:
+        resources:
+          limits:
+            memory: 1024Mi
+        requests:
+          memory: 512Mi
+      helper:
+        resources:
+          limits:
+            memory: 1024Mi
+        requests:
+          memory: 1024Mi    
+    secrets:
+      imagePullSecret: sentinelone-pull-secret
+      site_key:
+        name: "eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjNmYWY2MTBiNjM0OTk0OWE4ZmE0M2JmNzU1ZDU2YmYyNzM5M2EyZTZiM2RhNzNkNDRmNTkzYzgzMGJjODc5ODgifQ=="
