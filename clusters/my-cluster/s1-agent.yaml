@@ -25,6 +25,7 @@ spec:
     configuration:
       cluster:
         name: "MinikubeLab"
+        uid: "" # set the cluster uid
       repositories:
         agent: "containers.sentinelone.net/cws-agent/s1agent"
         helper: "containers.sentinelone.net/cws-agent/s1helper"
