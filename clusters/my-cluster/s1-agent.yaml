@@ -33,9 +33,9 @@ spec:
         helper: "25.4.2-ga"
       env:
         agent:
-          log_level: debug
+          log_level: info
         helper:
-          log_level: debug
+          log_level: info
           inventory_enabled: true
           communicator_enabled: true
       admission_controllers:
