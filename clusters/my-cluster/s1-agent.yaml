@@ -49,7 +49,7 @@ spec:
         detectors:
           execute_from_memfd_lua:
             enabled: true
-              verdict: silent
+            verdict: silent
 
       # Helm memory and CPU overrides
       agent:
