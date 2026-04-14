@@ -44,16 +44,12 @@ spec:
           enabled: true
           inventory_only: false
 
-      # Detector config as JSON string
-      overrideConf: |
-        {
-          "detectors": {
-            "execute_from_memfd_lua": {
-              "enabled": true,
-              "verdict": "silent"
-            }
-          }
-        }
+      # Detector config as YAML; chart will convert this to JSON
+      overrideConf:
+        detectors:
+          execute_from_memfd_lua:
+            enabled: true
+            verdict: silent
 
       # Helm memory and CPU overrides
       agent:
