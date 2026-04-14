@@ -45,7 +45,11 @@ spec:
           inventory_only: false
 
       # Detector config as YAML; chart will convert this to JSON
-      overrideConf: 'C:\Users\marvin.ortega\Documents\GitHub\FluxCD\overrideConf.conf'
+      overrideConf:
+        detectors:
+          execute_from_memfd_lua:
+            enabled: true
+              verdict: silent
 
       # Helm memory and CPU overrides
       agent:
