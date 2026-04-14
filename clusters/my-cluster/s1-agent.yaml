@@ -45,11 +45,7 @@ spec:
           inventory_only: false
 
       # Detector config as YAML; chart will convert this to JSON
-      overrideConf:
-        detectors:
-          execute_from_memfd_lua:
-            enabled: true
-            verdict: silent
+      overrideConf: "C:\Users\marvin.ortega\overrideConf.conf"
 
       # Helm memory and CPU overrides
       agent:
