@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: s1-agent
-      version: 25.4.2
+      version: 26.1.1
       sourceRef:
         kind: HelmRepository
         name: sentinelone
@@ -30,8 +30,8 @@ spec:
         agent: "containers.sentinelone.net/cws-agent/s1agent"
         helper: "containers.sentinelone.net/cws-agent/s1helper"
       tag:
-        agent: "25.4.2-ga"
-        helper: "25.4.2-ga"
+        agent: "26.1.1-ga"
+        helper: "26.1.1-ga"
       env:
         agent:
           log_level: info
