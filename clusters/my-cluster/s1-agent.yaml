@@ -47,7 +47,7 @@ spec:
       # Detector config as YAML; chart will convert this to JSON
       overrideConf:
         detectors:
-          execute_from_memfd_lua:
+          execute_from_memfd.lua:
             enabled: true
             verdict: "silent"
 
